@@ -1,24 +1,27 @@
 export default function UserInput() {
+  const label = "block mb-1 font-light";
+  const input = "rounded-md text-slate-800 text-lg p-1 text-center ";
+
   return (
     <section className="flex flex-col gap-4 bg-slate-600 mx-auto p-4 max-w-lg rounded-lg">
-      <div className="flex flex-row gap-8">
-        <p className="">
-          <label>Initial Investment</label>
-          <input type="number" required />
+      <div className="flex justify-evenly">
+        <p className="mr-4">
+          <label className={label}>Initial Investment</label>
+          <input className={input} type="number" required />
         </p>
-        <p className="">
-          <label>Annual Investment</label>
-          <input type="number" required />
+        <p>
+          <label className={label}>Annual Investment</label>
+          <input className={input} type="number" required />
         </p>
       </div>
-      <div className="flex flex-row gap-8">
-        <p className="">
-          <label>Expected Return</label>
-          <input type="number" required />
+      <div className="flex justify-evenly">
+        <p className="mr-4">
+          <label className={label}>Expected Return</label>
+          <input className={input} type="number" required />
         </p>
-        <p className="">
-          <label className="block">Duration</label>
-          <input type="number" required />
+        <p>
+          <label className={label}>Duration</label>
+          <input className={input} type="number" required />
         </p>
       </div>
     </section>
