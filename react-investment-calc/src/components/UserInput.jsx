@@ -1,4 +1,4 @@
-export default function UserInput() {
+export default function UserInput({ userInput }) {
   const label = "block mb-1 font-light";
   const input = "rounded-md text-slate-800 text-lg p-1 text-center ";
 
@@ -7,21 +7,45 @@ export default function UserInput() {
       <div className="flex justify-evenly">
         <p className="mr-4">
           <label className={label}>Initial Investment</label>
-          <input className={input} type="number" placeholder="0" required />
+          <input
+            className={input}
+            value={userInput.initAmount}
+            type="number"
+            placeholder="0"
+            required
+          />
         </p>
         <p>
           <label className={label}>Annual Investment</label>
-          <input className={input} type="number" placeholder="0" required />
+          <input
+            className={input}
+            value={userInput.annualInvestment}
+            type="number"
+            placeholder="0"
+            required
+          />
         </p>
       </div>
       <div className="flex justify-evenly">
         <p className="mr-4">
           <label className={label}>Expected Return</label>
-          <input className={input} type="number" placeholder="0" required />
+          <input
+            className={input}
+            value={userInput.returns}
+            type="number"
+            placeholder="0"
+            required
+          />
         </p>
         <p>
           <label className={label}>Duration</label>
-          <input className={input} type="number" placeholder="0" required />
+          <input
+            className={input}
+            value={userInput.duration}
+            type="number"
+            placeholder="0"
+            required
+          />
         </p>
       </div>
     </section>
