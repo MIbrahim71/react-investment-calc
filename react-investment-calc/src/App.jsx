@@ -11,16 +11,20 @@ function App() {
     duration: 10,
   });
 
-  function handleChange() {
-    setUserInput((prev) => {
-      [...userInput, prev];
+  function handleChange(inputIdentifier, newValue) {
+    console.log("CHANGE");
+    setUserInput((prevUserInput) => {
+      return {
+        ...prevUserInput,
+        [inputIdentifier]: +newValue,
+      };
     });
   }
 
   return (
     <main className="min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white text-sm sm:text-base">
       <Header />
-      <UserInput input={userInput} onChange={handleChange} />
+      <UserInput userInput={userInput} onChange={handleChange} />
       <Output />
     </main>
   );

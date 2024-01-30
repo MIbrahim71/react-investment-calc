@@ -1,4 +1,4 @@
-export default function UserInput({ userInput }) {
+export default function UserInput({ userInput, onChange }) {
   const label = "block mb-1 font-light";
   const input = "rounded-md text-slate-800 text-lg p-1 text-center ";
 
@@ -9,7 +9,8 @@ export default function UserInput({ userInput }) {
           <label className={label}>Initial Investment</label>
           <input
             className={input}
-            value={userInput.initAmount}
+            value={Number(userInput.initAmount).toString()}
+            onChange={(event) => onChange("initAmount", event.target.value)}
             type="number"
             placeholder="0"
             required
@@ -19,7 +20,10 @@ export default function UserInput({ userInput }) {
           <label className={label}>Annual Investment</label>
           <input
             className={input}
-            value={userInput.annualInvestment}
+            value={Number(userInput.annualInvestment).toString()}
+            onChange={(event) =>
+              onChange("annualInvestment", event.target.value)
+            }
             type="number"
             placeholder="0"
             required
@@ -31,7 +35,8 @@ export default function UserInput({ userInput }) {
           <label className={label}>Expected Return</label>
           <input
             className={input}
-            value={userInput.returns}
+            value={Number(userInput.returns).toString()}
+            onChange={(event) => onChange("returns", event.target.value)}
             type="number"
             placeholder="0"
             required
@@ -41,7 +46,8 @@ export default function UserInput({ userInput }) {
           <label className={label}>Duration</label>
           <input
             className={input}
-            value={userInput.duration}
+            value={Number(userInput.duration).toString()}
+            onChange={(event) => onChange("duration", event.target.value)}
             type="number"
             placeholder="0"
             required
