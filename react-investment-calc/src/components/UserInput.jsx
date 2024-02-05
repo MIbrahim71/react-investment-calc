@@ -56,12 +56,7 @@ export default function UserInput({ userInput, onChange }) {
           />
         </p>
       </div>
-      <Output
-        initAmount={userInput.initAmount}
-        annualInvestment={userInput.annualInvestment}
-        returns={userInput.returns}
-        duration={userInput.duration}
-      />
+      <Output input={userInput} />
     </section>
   );
 }
