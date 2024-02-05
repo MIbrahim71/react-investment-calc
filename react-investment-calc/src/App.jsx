@@ -10,7 +10,6 @@ function App() {
     returns: 10,
     duration: 10,
   });
-  const [finalAmount, setFinalAmount] = useState();
 
   // Upon typing in the input, the values will be visible to the user
   function handleChange(inputIdentifier, newValue) {
