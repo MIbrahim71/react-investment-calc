@@ -1,5 +1,3 @@
-import Output from "./Output";
-
 export default function UserInput({ userInput, onChange }) {
   const label = "block mb-1 font-light";
   const input = "rounded-md text-slate-800 text-lg p-1 text-center ";
@@ -56,7 +54,6 @@ export default function UserInput({ userInput, onChange }) {
           />
         </p>
       </div>
-      <Output input={userInput} />
     </section>
   );
 }

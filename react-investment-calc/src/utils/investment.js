@@ -2,11 +2,17 @@ export function calculateInterest(
   { initAmount, annualInvestment, returns, duration },
   results
 ) {
-  let total = initAmount;
-  for (let i = 0; i < duration; i++) {
-    total += annualInvestment;
-    total *= 1 + returns / 100;
+  let total = parseInt(initAmount);
+  for (let i = 0; i < parseInt(duration); i++) {
+    total += parseInt(annualInvestment);
+    total *= 1 + parseInt(returns) / 100;
+    results.push(parseInt(total));
   }
-
-  results = total;
 }
+
+export const formatter = new Intl.NumberFormat("en-UK", {
+  style: "currency",
+  currency: "GBP",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});

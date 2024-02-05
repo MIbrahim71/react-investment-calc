@@ -1,4 +1,4 @@
-import { calculateInterest } from "../utils/investment";
+import { calculateInterest, formatter } from "../utils/investment";
 
 export default function Output({ input }) {
   // const amounts = {
@@ -7,8 +7,9 @@ export default function Output({ input }) {
   //   "Total Interest": finalAmount - (initAmount + annualInvestment * duration),
   // };
 
-  const results = "";
-  calculateInterest(input, results);
+  const results = [];
+  const interest = calculateInterest(input, results);
+  console.log(interest);
 
   return (
     <div className="bg-blue-400 rounded text-white flex flex-col gap-6 p-4">
@@ -29,7 +30,7 @@ export default function Output({ input }) {
         Reset
       </button> */}
 
-      <h1>{results}</h1>
+      <h1>{formatter.format(results)}</h1>
     </div>
   );
 }
