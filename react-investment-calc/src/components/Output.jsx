@@ -1,49 +1,34 @@
-import { calculateInterest } from "../utils/investment";
+import { calculateInterest, formatter } from "../utils/investment";
 
 export default function Output({ input }) {
-  const formatter = new Intl.NumberFormat("en-UK", {
-    style: "currency",
-    currency: "GBP",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
+  const results = calculateInterest(input);
+  if (!results) return null;
 
-  const results = "";
-  const finalAmount = calculateInterest(input, results);
-
-  console.log(finalAmount);
-
+  console.log("Results", results);
   const amounts = {
-    "Investment Value": finalAmount,
+    "Investment Value": results,
     "Total Invested":
-      parseInt(input.initAmount) +
-      parseInt(input.annualInvestment) * parseInt(input.duration),
+      input.initAmount + input.annualInvestment * input.duration,
     "Total Interest":
-      finalAmount -
-      (parseInt(input.initAmount) +
-        parseInt(input.annualInvestment) * parseInt(input.duration)),
+      results - (input.initAmount + input.annualInvestment * input.duration),
   };
+  console.log(input);
 
   return (
-    <div className="bg-blue-400 rounded text-white flex flex-col gap-6 p-4">
-      {/* {Object.keys(amounts).map((amount, amountIndex) => {
+    <div className="bg-blue-400 rounded-lg text-white flex flex-col gap-6 p-8  max-w-lg">
+      {Object.keys(amounts).map((amount, amountIndex) => {
         return (
-          <div key={amountIndex} className="flex items-center gap-2">
-            <h2 className="text-lg font-semibold sm:text-xl md:text-2xl ">
+          <div
+            key={amountIndex}
+            className="flex flex-row justify-between items-center gap-8"
+          >
+            <h2 className="text-xl font-semibold sm:text-xl md:text-2xl ">
               {amount}
             </h2>
-            <p>${amounts[amount].toFixed(2)}</p>
+            <p>{formatter.format(amounts[amount].toFixed(2))}</p>
           </div>
         );
-      })} */}
-      {/* <button
-        className="px-4 py-2 text-center border-2 border-solid border-white font-bold text-white rounded"
-        onClick={reset}
-      >
-        Reset
-      </button> */}
-
-      <h1>{formatter.format(finalAmount)}</h1>
+      })}
     </div>
   );
 }
