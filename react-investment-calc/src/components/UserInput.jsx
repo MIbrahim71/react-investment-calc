@@ -1,9 +1,9 @@
 export default function UserInput({ userInput, onChange }) {
-  const label = "block mb-1 font-light";
-  const input = "rounded-md text-slate-800 text-lg p-1 text-center ";
+  const label = "block mb-1 font-light sm:text-xl";
+  const input = "rounded-md text-slate-800 sm:text-xl sm:p-1 text-center";
 
   return (
-    <section className="flex flex-col gap-4 bg-slate-600 mx-auto p-8 m-8 max-w-lg rounded-lg">
+    <section className="flex flex-col gap-4 bg-slate-600 mx-auto p-4 sm:p-8 m-8 max-w-lg rounded-lg">
       <div className="flex justify-evenly">
         <p className="mr-4">
           <label className={label}>Initial Investment</label>

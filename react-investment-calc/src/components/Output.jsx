@@ -15,17 +15,15 @@ export default function Output({ input }) {
   console.log(input);
 
   return (
-    <div className="bg-blue-400 rounded-lg text-white flex flex-col gap-6 p-8">
+    <div className="bg-stone-500 rounded-lg text-white flex flex-col gap-6 p-8">
       {Object.keys(amounts).map((amount, amountIndex) => {
         return (
           <div
             key={amountIndex}
-            className="flex flex-row justify-between items-center gap-8"
+            className="flex flex-row justify-between items-center gap-8 md:p-2"
           >
-            <h2 className="text-xl font-semibold sm:text-xl md:text-2xl ">
-              {amount}
-            </h2>
-            <p className="text-xl">
+            <h2 className="text-xl  sm:text-xl md:text-3xl ">{amount}</h2>
+            <p className="text-xl sm:text-3xl font-semibold">
               {formatter.format(amounts[amount].toFixed(2))}
             </p>
           </div>

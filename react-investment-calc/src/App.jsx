@@ -13,7 +13,6 @@ function App() {
 
   // Upon typing in the input, the values will be visible to the user
   function handleChange(inputIdentifier, newValue) {
-    console.log("CHANGE");
     setUserInput((prevUserInput) => {
       return {
         ...prevUserInput,
