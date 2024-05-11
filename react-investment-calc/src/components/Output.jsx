@@ -9,7 +9,7 @@ export default function Output({ input }) {
     "Investment Value": results,
     "Total Invested":
       input.initAmount + input.annualInvestment * input.duration,
-    "Total Interest":
+    Return:
       results - (input.initAmount + input.annualInvestment * input.duration),
   };
   console.log(input);

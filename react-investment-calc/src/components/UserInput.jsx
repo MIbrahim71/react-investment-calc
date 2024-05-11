@@ -43,7 +43,9 @@ export default function UserInput({ userInput, onChange }) {
           />
         </p>
         <p>
-          <label className={label}>Duration</label>
+          <label className={label}>
+            Duration <em>(years)</em>
+          </label>
           <input
             className={input}
             value={Number(userInput.duration).toString()}
